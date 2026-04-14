@@ -1,6 +1,12 @@
 import React, {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 export default function LoginForm(){
     const [isLogin, setIsLogin]=useState(true)
+     const navigate = useNavigate();   
+
+    const handleSignup = () => {     
+        navigate("/preferences");
+    };
 
     return(
         <div className='container'>
@@ -16,7 +22,12 @@ export default function LoginForm(){
                     <input type='password' placeholder='Password'></input>
                     <a href='#'>Forgot Password</a>
                     <button>Login</button>
-                    <p>Not a member??<a href='#' onClick={()=>setIsLogin(false)}>Signup now</a></p>
+                   <p>
+                        Not a member??
+                        <button onClick={() => setIsLogin(false)}>
+                            Signup now
+                        </button>
+                        </p>
                 </div>
                 </> : <>
                 <div className='form'>
@@ -66,7 +77,7 @@ export default function LoginForm(){
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
 
-                <button>Signup</button>
+                <button onClick={handleSignup}>Signup</button>
                                 </div>
                                 </>
                                 }
