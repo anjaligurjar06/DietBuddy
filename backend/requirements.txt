@@ -1,3 +1,8 @@
 fastapi
 uvicorn 
 supabase
+requests
+pydantic
+python-dotenv
+PyJWT
+httpx
